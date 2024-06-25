@@ -1,6 +1,9 @@
 pipeline {
-    agent windows
-
+    agent {
+        node {
+            label 'windows'
+        }
+    }
     stages {
         stage('Checkout') {
             steps {
