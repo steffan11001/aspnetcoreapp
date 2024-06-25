@@ -28,3 +28,4 @@ F:\Eurofins\aspnetcoreapp\obj\Debug\net8.0\refint\aspnetcoreapp.dll
 F:\Eurofins\aspnetcoreapp\obj\Debug\net8.0\aspnetcoreapp.pdb
 F:\Eurofins\aspnetcoreapp\obj\Debug\net8.0\aspnetcoreapp.genruntimeconfig.cache
 F:\Eurofins\aspnetcoreapp\obj\Debug\net8.0\ref\aspnetcoreapp.dll
+F:\Eurofins\aspnetcoreapp\obj\Debug\net8.0\aspnetcoreapp.sourcelink.json
