@@ -38,10 +38,20 @@ pipeline {
 
     post {
         success {
-            echo 'Build succeeded!'
+            script {
+                currentBuild.result = 'SUCCESS'
+                echo "Build succeeded! Sending status to GitHub."
+                // Utilizarea plugin-ului GitHub pentru a trimite statusul către GitHub
+                githubNotify context: 'Jenkins Build', description: 'Build successful', status: 'SUCCESS'
+            }
         }
         failure {
-            echo 'Build failed!'
+            script {
+                currentBuild.result = 'FAILURE'
+                echo "Build failed! Sending status to GitHub."
+                // Utilizarea plugin-ului GitHub pentru a trimite statusul către GitHub
+                githubNotify context: 'Jenkins Build', description: 'Build failed', status: 'FAILURE'
+            }
         }
     }
 }
