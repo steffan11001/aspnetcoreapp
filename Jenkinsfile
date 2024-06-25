@@ -16,8 +16,6 @@ pipeline {
         stage('Restore') {
             steps {
                 script {
-                    def dotnetHome = tool name: 'dotnet', type: 'DotNetCoreSdkInstaller'
-                    env.PATH = "${dotnetHome}:${env.PATH}"
                     bat 'dotnet restore'
                 }
             }
@@ -25,8 +23,6 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    def dotnetHome = tool name: 'dotnet', type: 'DotNetCoreSdkInstaller'
-                    env.PATH = "${dotnetHome}:${env.PATH}"
                     bat 'dotnet build --no-restore'
                 }
             }
@@ -34,8 +30,6 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    def dotnetHome = tool name: 'dotnet', type: 'DotNetCoreSdkInstaller'
-                    env.PATH = "${dotnetHome}:${env.PATH}"
                     bat 'dotnet test --no-restore --verbosity normal'
                 }
             }
