@@ -27,12 +27,16 @@ pipeline {
                 }
             }
         }
+        stage('Test') {
+            steps {
+                script {
+                    bat 'dotnet test --no-restore --verbosity normal'
+                }
+            }
+        }
     }
 
     post {
-        always {
-            junit '**/TestResults/*.xml'
-        }
         success {
             echo 'Build succeeded!'
         }
